@@ -1,38 +1,46 @@
 {
-  "name": "bachat-app",
-  "version": "0.1.0",
-  "private": true,
+  "name": "Bachat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/KirtiVernekar/Bachat-app.git",
+  "author": "Kirti Vernekar <kirtivernekar09@gmail.com>",
+  "license": "MIT",
   "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@hot-loader/react-dom": "^17.0.1",
+    "@material-ui/core": "^4.12.3",
+    "@material-ui/icons": "^4.11.2",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "mongodb": "^4.1.1",
+    "mongoose": "^6.0.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
+    "react-hot-loader": "^4.13.0",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@babel/preset-env": "^7.15.4",
+    "@babel/preset-react": "^7.14.5",
+    "babel-loader": "^8.2.2",
+    "concurrently": "^6.2.1",
+    "css-loader": "^6.2.0",
+    "nodemon": "^2.0.12",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.52.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-dev-middleware": "^5.0.0",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^3.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+    "development": "nodemon",
+    "build": "webpack --config webpack.config.client.production.js && webpack --mode=production --config webpack.config.server.js",
+    "start": "NODE_ENV=production node ./dist/server.generated.js"
   }
 }
