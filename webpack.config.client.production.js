@@ -1,5 +1,6 @@
 const path = require('path')
 const webpack = require('webpack')
+const nodeExternals = require('webpack-node-externals');
 const CURRENT_WORKING_DIR = process.cwd()
 
 const config = {
@@ -9,8 +10,8 @@ const config = {
   ],
   output: {
     path: path.join(CURRENT_WORKING_DIR , '/dist'),
+    publicPath: '/dist/',
     filename: 'bundle.js',
-    publicPath: "/dist/"
   },
   module: {
     rules: [
@@ -22,9 +23,14 @@ const config = {
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
-    }
+      },
+      {
+        test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
+        use: 'file-loader'
+      }
     ]
-  }
+  },
+  target: "node",
  };
 
 module.exports = config
