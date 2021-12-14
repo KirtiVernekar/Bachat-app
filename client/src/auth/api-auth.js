@@ -1,3 +1,5 @@
+import regeneratorRuntime from 'regenerator-runtime';
+
 const signin = async (user) => {
     try {
       let response = await fetch('/auth/signin/', {

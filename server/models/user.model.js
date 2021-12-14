@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
 import crypto from 'crypto'
+
 const UserSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -23,7 +24,7 @@ const UserSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
-})
+});
 
 UserSchema
   .virtual('password')
@@ -34,7 +35,7 @@ UserSchema
   })
   .get(function() {
     return this._password
-  })
+  });
 
 UserSchema.path('hashed_password').validate(function(v) {
   if (this._password && this._password.length < 6) {
@@ -43,7 +44,7 @@ UserSchema.path('hashed_password').validate(function(v) {
   if (this.isNew && !this._password) {
     this.invalidate('password', 'Password is required')
   }
-}, null)
+}, null);
 
 UserSchema.methods = {
   authenticate: function(plainText) {
@@ -63,6 +64,6 @@ UserSchema.methods = {
   makeSalt: function() {
     return Math.round((new Date().valueOf() * Math.random())) + ''
   }
-}
+};
 
-export default mongoose.model('User', UserSchema)
+export default mongoose.model('User', UserSchema);

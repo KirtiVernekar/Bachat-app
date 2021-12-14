@@ -1,49 +1,75 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
-import { Card, CardContent, CardMedia, Typography } from '@material-ui/core'
+import { CardMedia, Typography, Button, Grid } from '@material-ui/core'
+import auth from '../auth/auth-helper'
+import TransactionOverview from './../transaction/TransactionOverview'
+import SavingsPiggy from '../../assets/SavingsPiggy.svg'
 
 const useStyles = makeStyles(theme => ({
-  card: {
-    maxWidth: 600,
+  root: {
     margin: 'auto',
     marginTop: theme.spacing(5),
-    marginBottom: theme.spacing(5)
+    marginBottom: theme.spacing(5),
   },
   title: {
     padding:`${theme.spacing(3)}px ${theme.spacing(2.5)}px ${theme.spacing(2)}px`,
-    color: theme.palette.openTitle
+    color: '#3A0CA3',
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
   },
   media: {
-    minHeight: 400
+    height: 500,
+    width: 500,
   },
-  credit: {
-    padding: 10,
-    textAlign: 'right',
-    backgroundColor: '#ededed',
-    borderBottom: '1px solid #d0d0d0',
-    '& a':{
-      color: '#3f4771'
-    } 
   }
-})) 
+))
 
-const HomePage = () => {
+export default function Home(){
   const classes = useStyles();
   return (
-    <Card className={classes.card}>
-    <Typography variant="h6" className={classes.title}>
-      Home Page
-    </Typography>
-    {/* <CardMedia className={classes.media} image={unicornbikeImg} title="Unicorn Bicycle"/> */}
-    {/* <Link to="/users">Users</Link> */}
-    <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo by <a href="https://unsplash.com/@boudewijn_huysmans" target="_blank" rel="noopener noreferrer">Boudewijn Huysmans</a> on Unsplash</Typography>
-    <CardContent>
-      <Typography variant="body1" component="p">
-        Welcome to the MERN Skeleton home page.
-      </Typography>
-    </CardContent>
-  </Card>
+    <>
+      { auth.isAuthenticated() && 
+        <TransactionOverview/> 
+      } 
+      { !auth.isAuthenticated() && typeof window !== "undefined" && 
+        (<div className={classes.root}>
+            <Grid container justifyContent="space-around" alignItems="center">
+                <Grid container direction="column" spacing={3}>
+                    {/* <Typography variant="h5" className={classes.title}>
+                    PREMIUM EXPENSE TRACKER
+                    </Typography> */}
+                    <Grid item>
+                    <Typography variant="h3">
+                    Wanna keep track of your day-to-day expenses and savings at one place?
+                    </Typography>
+                    </Grid>
+                    <Grid item>
+                    <Typography variant="body1" component="p">
+                    Bachat app uses transaction records to extract meaningful data patterns to give you a visual representation of your expense and saving habits.
+                    </Typography>
+                    </Grid>
+                    <Grid item container spacing={3}>
+                        <Grid item>
+                        <Button variant="contained" color="primary" component={Link} to="/signup">SIGN UP</Button>
+                        </Grid>
+                        <Grid item>
+                        <Button variant="contained" color="primary" component={Link} to="/signin">SIGN IN</Button>
+                        </Grid>
+                    </Grid>
+                </Grid>
+                <Grid item xs={4}>
+                    <div className={classes.img}>
+                    <CardMedia className={classes.media} image={SavingsPiggy} title="Savings Piggy"/>
+                    </div>
+                </Grid>
+            </Grid> 
+        </div>)
+      }
+    </>
   )
 }
-
-export default HomePage;

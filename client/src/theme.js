@@ -1,6 +1,15 @@
 import { createTheme } from '@material-ui/core/styles'
 
+const defaultTheme = createTheme();
+
 const theme = createTheme({
+    mixins: {
+      gutters: {
+      [defaultTheme.breakpoints.up('sm')]: {
+        paddingLeft: '16px',
+        paddingRight: '16px',
+      }}
+    },
     typography: {
       useNextVariants: true,
       fontFamily: [ 'Encode Sans Semi Expanded', 'sans-serif' ].join(','),
@@ -8,7 +17,8 @@ const theme = createTheme({
     palette: {
       primary: {
       light: '#4361EE',
-      main: '#3A0CA3',
+      // main: '#3A0CA3',
+      main: '#3300A6',
       dark: '#2A0878',
       contrastText: '#fff',
     },
@@ -21,7 +31,7 @@ const theme = createTheme({
       openTitle: '#3A0CA3',
       protectedTitle: '#4CC9F0',
       type: 'light'
-    }
+    },
 })
 
 export default theme;

@@ -5,12 +5,14 @@ import { ArrowForward, Person } from '@material-ui/icons'
 import { List, ListItem, ListItemAvatar, ListItemSecondaryAction, ListItemText } from '@material-ui/core'
 import {Link} from 'react-router-dom'
 import {list} from './api-user.js'
+import { theme } from './../theme'
 
-const useStyles = makeStyles(theme => ({
-  root: theme.mixins.gutters({
+const useStyles = makeStyles( theme => ({
+  root:  {
+    ...theme.mixins.gutters,
     padding: theme.spacing(1),
     margin: theme.spacing(5)
-  }),
+  },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle

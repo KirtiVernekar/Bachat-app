@@ -12,9 +12,9 @@ const App = () => {
     if (jssStyles) {
       jssStyles.parentNode.removeChild(jssStyles)
     }
-  }, []);
+  }, [])
+
   return (    
-    //<div><h2>Expense tracker</h2> </div>
     <BrowserRouter>
       <ThemeProvider theme={theme}>  {/* provides access to the Material-UI theme */}
        <MainRouter/>
@@ -22,6 +22,6 @@ const App = () => {
     </BrowserRouter>  
 )}
 
-export default hot(module)(App); //App React component is hot-exported to enable hot reloading with react-hot-loader during development.
+//export default hot(module)(App); //App React component is hot-exported to enable hot reloading with react-hot-loader during development.
 
-//export default App;
+export default App;
