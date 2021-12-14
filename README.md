@@ -10,7 +10,7 @@
 
 <hr />
 
-<p align="left"> A MERN app that helps users keep track of their day-to-day expenses and savings with interactive data visualization. It is built using <strong>ReactJS</strong>, <strong>MERN stack</strong>, <strong>MongoDB Atlas</strong> for database.</p>
+<p align="left"> A MERN app that helps users keep track of their day-to-day expenses and savings with interactive data visualization. It is built using <strong>ReactJS</strong>, <strong>MERN stack</strong>, <strong>MongoDB Atlas</strong> for database and <strong>Victory.js charts</strong>.</p>
 
 
 ## :bulb:Features
