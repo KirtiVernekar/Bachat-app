@@ -22,27 +22,11 @@ const config = {
         use: ['babel-loader']
       },
       {
-        test: /\.css$/,
-        use: [
-            "style-loader", 
-            {
-                loader: "css-loader",
-                options: {
-                  importLoaders: 1,
-                  modules: true
-                }
-            }
-        ],
-        include: /\.module\.css$/,
-      },
-      {
         test: /\.css$/i,
-        exclude: /node_modules/,
         use: [
             MiniCssExtractPlugin.loader, 
             "css-loader"
         ],
-        exclude: /\.module\.css$/,
       },
       {
         test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,

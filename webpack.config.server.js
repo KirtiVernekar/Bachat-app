@@ -10,7 +10,7 @@ const config = {
     entry: [ path.join(CURRENT_WORKING_DIR , './server/server.js') ],
     output: {
         path: path.join(CURRENT_WORKING_DIR , '/dist/'),
-        filename: "server.generated.js",      //outputs the bundled code in server.generated.js in the dist folder
+        filename: "server.generated.js",
         publicPath: '/dist/',
         libraryTarget: "commonjs2"
     },
@@ -26,25 +26,8 @@ const config = {
                 test: /\.css$/i,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            importLoaders: 1,
-                            modules: {
-                            localIdentName: '[name]__[local]__[hash:base64:5]'
-                            }
-                        }
-                    }
-                ],
-                include: /\.module\.css$/
-            },
-            {
-                test: /\.css$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
                     'css-loader',
                 ],
-                exclude: /\.module\.css$/
             },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,

@@ -1,21 +1,21 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import Users from './user/Users'
-import Signup from './user/Signup'
-import Signin from './auth/Signin'
-import EditProfile from './user/EditProfile'
-import Profile from './user/Profile'
-import PrivateRoute from './auth/PrivateRoute'
-import Reports from './reports/Reports'
-import MenuBar from './components/MenuBar'
-import NewTransaction from './transaction/NewTransaction'
-import Transactions from './transaction/Transactions'
-import { GlobalProvider } from './context/GlobalState'
+import HomePage from '../components/HomePage'
+import Users from '../user/Users'
+import Signup from '../user/Signup'
+import Signin from '../auth/Signin'
+import EditProfile from '../user/EditProfile'
+import Profile from '../user/Profile'
+import PrivateRoute from './PrivateRoute'
+import Reports from '../reports/Reports'
+import MenuBar from '../components/MenuBar'
+import NewTransaction from '../transaction/NewTransaction'
+import Transactions from '../transaction/Transactions'
+import { GlobalProvider } from '../context/GlobalState'
 
 const MainRouter = () => {
     return ( 
-      <div className='app'>
+      <div>
         <GlobalProvider>
         <MenuBar/>
         <Switch>

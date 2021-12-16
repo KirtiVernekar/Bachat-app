@@ -12,9 +12,8 @@ import transactionRoutes from './routes/transaction.routes'
 // modules for server side rendering
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
-import MainRouter from './../client/src/MainRouter'
+import MainRouter from './../client/src/router/MainRouter'
 import { StaticRouter } from 'react-router-dom'
-
 import { ServerStyleSheets, ThemeProvider } from '@material-ui/styles'
 import theme from './../client/src/theme'
 //end

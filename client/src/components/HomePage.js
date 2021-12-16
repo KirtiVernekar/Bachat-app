@@ -3,11 +3,28 @@ import { Link } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core/styles'
 import { Media, Typography, Button, Grid } from '@material-ui/core'
 import auth from '../auth/auth-helper'
-import TransactionOverview from './../transaction/TransactionOverview'
+import TransactionOverview from '../transaction/TransactionOverview'
 import SavingsPiggy from '../../assets/SavingsPiggy.svg'
-import  styles from './HomePage.module.css'
+
+
+const useStyles = makeStyles(theme => ({
+  container: {
+    padding:`3rem 4rem`,
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  title: {
+    color: '#2bbd7e'
+  },
+  image: {
+    height: '100%',
+    weight: '100%'
+  },
+
+}))
 
 export default function Home(){
+  const classes = useStyles()
   return (
     <>
       { auth.isAuthenticated() && 
@@ -15,10 +32,10 @@ export default function Home(){
       } 
       { !auth.isAuthenticated() && typeof window !== "undefined" && 
         (<div>
-            <Grid container className={styles.container}>
+            <Grid container className={classes.container}>
                 <Grid item xs={6} container direction="column" spacing={3}>
                     <Grid item>
-                      <Typography variant="h4" className={styles.title}>
+                      <Typography variant="h4" className={classes.container}>
                         Wanna keep track of your day-to-day expenses and savings at one place?
                       </Typography>
                     </Grid>
@@ -38,7 +55,7 @@ export default function Home(){
                     </Grid>
                 </Grid>
                 <Grid item xs={6}>
-                    <img className={styles.image} src={SavingsPiggy}/>
+                    <img className={classes.image} src={SavingsPiggy}/>
                 </Grid>
             </Grid> 
         </div>)

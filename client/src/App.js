@@ -1,10 +1,9 @@
 import React, {useEffect} from 'react';
-import MainRouter from './MainRouter'
+import MainRouter from './router/MainRouter'
 import { hot } from 'react-hot-loader'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider } from '@material-ui/styles'
+import { ThemeProvider, withStyles } from '@material-ui/styles'
 import theme from './theme'
-
 
 const App = () => {
   useEffect(() => {

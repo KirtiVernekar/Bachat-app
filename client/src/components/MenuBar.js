@@ -43,12 +43,7 @@ const useStyles = makeStyles((theme) => ({
 const MenuBar = withRouter(({history}) => {
   const classes = useStyles();
   const {setTransactionType} = useContext(GlobalContext);
-  const handleClick = (transactionType, path) => {
-    setTransactionType(transactionType)
-    history.push(path)
-  }
-
-
+  
   const [anchorAcc, setAnchorAcc] = useState(null);
   const accMenuOpen = Boolean(anchorAcc);
   const [anchorRep, setAnchorRep] = useState(null);
@@ -114,14 +109,6 @@ const MenuBar = withRouter(({history}) => {
           filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
         },
       }}>
-        {/* <MenuItem onClick={() => {handleClick('Expense', '/reports/expenses')}}>
-          <Box sx={{mr: 1}}> <CreditCard /></Box>
-          Expenses
-        </MenuItem>
-        <MenuItem onClick={() => {handleClick('Saving', '/reports/savings')}}>
-          <Box sx={{mr: 1}}> <CreditCard /></Box>
-          Savings
-        </MenuItem> */}
         <MenuItem onClick={() => {history.push('/reports/expenses')}}>
           <Box sx={{mr: 1}}> <CreditCard /></Box>
           Expenses
