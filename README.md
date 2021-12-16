@@ -40,25 +40,6 @@
 - CSS Modules
 
 
-## :checkered_flag:Getting Started
-
-Step to setup local dev environment:
-
-1. Clone this repo
-2. Install all the dependencies
-
-   ```bash
-   npm install
-   ```
-
-3. Tweak the code
-4. Run on local server
-
-   ```bash
-   npm start
-   ```
-
-
 ## :page_facing_up:License
 
 Copyright (c) 2021 Kirti Vernekar.
