@@ -1,0 +1,14 @@
+.container {
+    padding: 3rem 4rem;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    color: #3A0CA3;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+}

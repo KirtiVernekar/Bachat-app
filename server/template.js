@@ -7,7 +7,11 @@ export default ({markup, css}) => {
           name="viewport"
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"
         >
-        <title>MERN Skeleton</title>
+        <meta
+          name="description"
+          content="A MERN app that helps users keep track of their day-to-day expenses and savings."
+        />
+        <title>Bachat App</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@300;400;500&display=swap" rel="stylesheet">

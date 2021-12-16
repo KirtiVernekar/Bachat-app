@@ -16,11 +16,12 @@ const App = () => {
 
   return (    
     <BrowserRouter>
-      <ThemeProvider theme={theme}>  {/* provides access to the Material-UI theme */}
+      <ThemeProvider theme={theme}>
        <MainRouter/>
       </ThemeProvider>
     </BrowserRouter>  
-)}
+  )
+}
 
 //export default hot(module)(App); //App React component is hot-exported to enable hot reloading with react-hot-loader during development.
 

@@ -3,7 +3,7 @@ import {AppBar, Toolbar, Tooltip, Typography, Box, Button, IconButton, Menu, Men
 import { AccountCircle, Person, Home, BarChart, Assessment, CreditCard, History, Savings } from '@material-ui/icons';
 //import Logout from '@material-ui/icons/Logout'
 import { Link, withRouter } from 'react-router-dom';
-import auth from './../auth/auth-helper'
+import auth from '../auth/auth-helper'
 import { GlobalContext } from '../context/GlobalState'
 
 const useStyles = makeStyles((theme) => ({
@@ -177,9 +177,9 @@ const MenuBar = withRouter(({history}) => {
       }
       {
         !auth.isAuthenticated() && (<span>
-          <Link to="/signup">
+          {/* <Link to="/signup">
             <Button className={classes.link}>Sign Up</Button>
-          </Link>
+          </Link> */}
           <Link to="/signin">
             <Button className={classes.link}>Sign In</Button>
           </Link>
