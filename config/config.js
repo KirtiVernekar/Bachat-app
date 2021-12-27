@@ -8,4 +8,3 @@ const config = {
 }
   
 export default config;
-//create a .env file and save the MongoDB atlas URI in MONGODB_URI after replacing the password
