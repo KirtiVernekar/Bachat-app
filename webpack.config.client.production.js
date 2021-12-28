@@ -5,7 +5,7 @@ const CURRENT_WORKING_DIR = process.cwd();
 
 const config = {
   mode: "production",
-  target: "node", 
+  target: "web", 
   entry: [
     path.join(CURRENT_WORKING_DIR, 'client/src/index.js')
   ],
