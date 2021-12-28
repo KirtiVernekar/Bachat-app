@@ -1,9 +1,11 @@
-const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const CURRENT_WORKING_DIR = process.cwd()
+const path = require('path');
+const webpack = require('webpack');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CURRENT_WORKING_DIR = process.cwd();
 
 const config = {
   mode: "production",
+  target: "node", 
   entry: [
     path.join(CURRENT_WORKING_DIR, 'client/src/index.js')
   ],
@@ -32,7 +34,18 @@ const config = {
       }
     ]
   },
-  target: "node",
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
+    new MiniCssExtractPlugin({
+        filename: '[name].css'
+    }),
+  ],
+  resolve: {
+      alias: {
+      'react-dom': '@hot-loader/react-dom'
+      }
+  },
  };
 
 module.exports = config
