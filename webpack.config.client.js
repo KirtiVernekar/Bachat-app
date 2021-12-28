@@ -1,7 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { loader } = require('mini-css-extract-plugin');
 const CURRENT_WORKING_DIR = process.cwd();
 
 const config = {
