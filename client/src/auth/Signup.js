@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Card, CardActions, CardContent, CardMedia, Icon, TextField, Button, Typography } from '@material-ui/core'
 import { Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import {create} from './api-user.js'
+import {create} from '../user/api-user.js'
 import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles(theme => ({
@@ -10,8 +10,12 @@ const useStyles = makeStyles(theme => ({
     maxWidth: 600,
     margin: 'auto',
     textAlign: 'center',
-    marginTop: theme.spacing(5),
-    paddingBottom: theme.spacing(2)
+    marginTop: theme.spacing(6),
+    marginBottom: theme.spacing(3),
+    boxShadow: `0 2px 6px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(46, 46, 46, 0.24)`,
+    ['@media (max-width:780px)']: { 
+      maxWidth: 360,
+    }
   },
   error: {
     verticalAlign: 'middle'
@@ -23,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: 300
+    width: 300,
   },
   submit: {
     margin: 'auto',

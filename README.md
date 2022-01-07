@@ -37,7 +37,7 @@
 - MERN stack
 - Material UI
 - Victory.js
-- CSS Modules
+- CSS in JS
 
 
 ## :page_facing_up:License

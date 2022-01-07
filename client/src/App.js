@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import MainRouter from './router/MainRouter'
 import { hot } from 'react-hot-loader'
 import { BrowserRouter } from 'react-router-dom'
-import { ThemeProvider, withStyles } from '@material-ui/styles'
+import { ThemeProvider } from '@material-ui/styles'
 import theme from './theme'
 
 const App = () => {
@@ -22,6 +22,7 @@ const App = () => {
   )
 }
 
-//export default hot(module)(App); //App React component is hot-exported to enable hot reloading with react-hot-loader during development.
+export default hot(module)(App);
+//for live reloading during development
 
-export default App;
+// export default App;

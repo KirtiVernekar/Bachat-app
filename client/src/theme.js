@@ -1,15 +1,13 @@
 import { createTheme } from '@material-ui/core/styles'
 
-const defaultTheme = createTheme();
-
 const theme = createTheme({
-    mixins: {
-      gutters: {
-      [defaultTheme.breakpoints.up('sm')]: {
-        paddingLeft: '16px',
-        paddingRight: '16px',
-      }}
-    },
+    // mixins: {
+    //   gutters: {
+    //   [defaultTheme.breakpoints.up('sm')]: {
+    //     paddingLeft: '16px',
+    //     paddingRight: '16px',
+    //   }}
+    // },
     typography: {
       useNextVariants: true,
       fontFamily: [ 'Encode Sans Semi Expanded', 'sans-serif' ].join(','),

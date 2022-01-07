@@ -1,7 +1,7 @@
 const path = require('path');
 const CURRENT_WORKING_DIR = process.cwd();
 // const HtmlWebpackPlugin = require("html-webpack-plugin"); //loads our HTML files n injects the bundle(s) in the same file
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+// const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const nodeExternals = require('webpack-node-externals');
 
 const config = {
@@ -22,13 +22,13 @@ const config = {
                 exclude: /node_modules/,
                 use: [ 'babel-loader' ]
             },
-            {
-                test: /\.css$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    'css-loader',
-                ],
-            },
+            // {
+            //     test: /\.css$/i,
+            //     use: [
+            //         MiniCssExtractPlugin.loader,
+            //         'css-loader',
+            //     ],
+            // },
             {
                 test: /\.(ttf|eot|svg|gif|jpg|png)(\?[\s\S]+)?$/,
                 use: 'file-loader'
@@ -39,9 +39,9 @@ const config = {
         // new HtmlWebpackPlugin({
         //     template: path.resolve(__dirname, "src", "index.html")
         //   },
-        new MiniCssExtractPlugin({
-            filename: '[name].css'
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: '[name].css'
+        // }),
     ],
  };
 

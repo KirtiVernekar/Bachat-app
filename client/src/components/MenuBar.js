@@ -6,13 +6,12 @@ import { Link, withRouter } from 'react-router-dom';
 import auth from '../auth/auth-helper'
 import { GlobalContext } from '../context/GlobalState'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(theme => ({
   navlinks: {
     marginLeft: theme.spacing(2),
     display: "flex",
     justifyContent: "flex-end",
     alignItems: "center",
-
   },
  logo: {
     flexGrow: "1",
@@ -36,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     //   color: "#4CC9F0",
     //   borderBottom: "5px solid #4CC9F0",
     // },
+  },
+  button: {
+    color: "white",
   },
 }));
 
@@ -168,7 +170,7 @@ const MenuBar = withRouter(({history}) => {
             <Button className={classes.link}>Sign Up</Button>
           </Link> */}
           <Link to="/signin">
-            <Button className={classes.link}>Sign In</Button>
+            <Button variant="text" className={classes.button}>Sign In</Button>
           </Link>
         </span>)
       }
